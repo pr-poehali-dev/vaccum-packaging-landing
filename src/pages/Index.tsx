@@ -5,9 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 import { ContactModal } from '@/components/ContactModal';
@@ -22,7 +20,7 @@ const Index = () => {
   const advantagesAnim = useScrollAnimation();
   const equipmentAnim = useScrollAnimation();
   const applicationAnim = useScrollAnimation();
-  const serviceAnim = useScrollAnimation();
+
   const testimonialsAnim = useScrollAnimation();
   const faqAnim = useScrollAnimation();
 
@@ -131,50 +129,7 @@ const Index = () => {
     },
   ];
 
-  const services = [
-    {
-      icon: 'Truck',
-      title: 'Доставка и установка',
-      desc: 'Бесплатная доставка по России, профессиональный монтаж',
-      details: ['Доставка в любой регион', 'Помощь в разгрузке', 'Установка на месте', 'Первый пуск'],
-      price: 'Бесплатно при заказе от 100 000 ₽'
-    },
-    {
-      icon: 'GraduationCap',
-      title: 'Обучение персонала',
-      desc: 'Комплексное обучение работе с оборудованием',
-      details: ['Теоретическая часть', 'Практические занятия', 'Методические материалы', 'Сертификат'],
-      price: 'от 15 000 ₽'
-    },
-    {
-      icon: 'Wrench',
-      title: 'Гарантийное обслуживание',
-      desc: 'Бесплатное обслуживание в течение гарантийного срока',
-      details: ['Гарантия 12-24 месяца', 'Бесплатный ремонт', 'Замена комплектующих', 'Выездной сервис'],
-      price: 'Включено в стоимость'
-    },
-    {
-      icon: 'Settings',
-      title: 'Постгарантийное обслуживание',
-      desc: 'Сервисная поддержка после окончания гарантии',
-      details: ['Диагностика', 'Ремонт', 'Запчасти', 'Модернизация'],
-      price: 'от 5 000 ₽/выезд'
-    },
-    {
-      icon: 'Package2',
-      title: 'Расходные материалы',
-      desc: 'Поставка пакетов, пленки и комплектующих',
-      details: ['Вакуумные пакеты', 'Рулонная пленка', 'Масло для насоса', 'Нагревательные элементы'],
-      price: 'от 500 ₽'
-    },
-    {
-      icon: 'Headphones',
-      title: 'Консультационная поддержка',
-      desc: 'Помощь в выборе оборудования и решении технических вопросов',
-      details: ['Подбор оборудования', 'Расчет эффективности', 'Технические консультации', 'Удаленная поддержка'],
-      price: 'Бесплатно'
-    },
-  ];
+
 
   const testimonials = [
     {
@@ -200,14 +155,7 @@ const Index = () => {
     },
   ];
 
-  const technicalSpecs = [
-    { model: 'DZ-600/2SB', type: 'Промышленная', power: '2.2 кВт', chamber: '600×520×180 мм', pump: '100 м³/ч', weight: '250 кг' },
-    { model: 'DZ-400/2SD', type: 'Промышленная', power: '1.5 кВт', chamber: '400×420×150 мм', pump: '63 м³/ч', weight: '180 кг' },
-    { model: 'DZ-260/PD', type: 'Настольная', power: '0.55 кВт', chamber: '260×310×120 мм', pump: '20 м³/ч', weight: '45 кг' },
-    { model: 'DZ-300/T', type: 'Настольная', power: '0.75 кВт', chamber: '300×320×125 мм', pump: '25 м³/ч', weight: '52 кг' },
-    { model: 'VS-100', type: 'Бытовая', power: '0.12 кВт', chamber: '300×50 мм', pump: '10 л/мин', weight: '1.2 кг' },
-    { model: 'HS-200', type: 'Бытовая', power: '0.15 кВт', chamber: '320×50 мм', pump: '12 л/мин', weight: '1.5 кг' },
-  ];
+
 
   const filteredEquipment = activeFilter === 'all' 
     ? equipment 
@@ -219,15 +167,13 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Icon name="Package" className="text-blue-600" size={32} />
-              <span className="text-2xl font-bold text-gray-900">VacuumPack</span>
+              <img src="https://cdn.poehali.dev/projects/e84451af-a3eb-4cf9-b3aa-82334790c296/files/8f28d00e-bfe8-443f-9a54-f05c97c1f0fb.png" alt="VacPro" className="h-10" />
             </div>
             
             <nav className="hidden md:flex items-center gap-8">
               <a href="#advantages" className="text-gray-700 hover:text-blue-600 transition-colors">Преимущества</a>
               <a href="#equipment" className="text-gray-700 hover:text-blue-600 transition-colors">Оборудование</a>
               <a href="#applications" className="text-gray-700 hover:text-blue-600 transition-colors">Применение</a>
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Услуги</a>
               <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">Отзывы</a>
               <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
             </nav>
@@ -253,7 +199,6 @@ const Index = () => {
               <a href="#advantages" className="text-gray-700" onClick={() => setMobileMenuOpen(false)}>Преимущества</a>
               <a href="#equipment" className="text-gray-700" onClick={() => setMobileMenuOpen(false)}>Оборудование</a>
               <a href="#applications" className="text-gray-700" onClick={() => setMobileMenuOpen(false)}>Применение</a>
-              <a href="#services" className="text-gray-700" onClick={() => setMobileMenuOpen(false)}>Услуги</a>
               <a href="#testimonials" className="text-gray-700" onClick={() => setMobileMenuOpen(false)}>Отзывы</a>
               <a href="#faq" className="text-gray-700" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
               <Button onClick={() => { setModalOpen(true); setMobileMenuOpen(false); }} className="bg-blue-600 w-full">
@@ -439,45 +384,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" ref={serviceAnim.ref as React.RefObject<HTMLElement>} className={`py-20 bg-gray-50 transition-all duration-1000 ${serviceAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Дополнительные услуги
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Полный комплекс сервисного обслуживания
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, idx) => (
-              <Card key={idx} className="hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <Icon name={service.icon as any} className="text-blue-600" size={28} />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription>{service.desc}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-4">
-                    {service.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                        <Icon name="Dot" className="text-blue-600 flex-shrink-0" size={20} />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="pt-4 border-t">
-                    <p className="text-sm text-gray-500">Стоимость:</p>
-                    <p className="text-lg font-bold text-blue-600">{service.price}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       <section id="testimonials" ref={testimonialsAnim.ref as React.RefObject<HTMLElement>} className={`py-20 bg-white transition-all duration-1000 ${testimonialsAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="container mx-auto px-4">
@@ -515,44 +422,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Технические характеристики
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Подробные спецификации нашего оборудования
-            </p>
-          </div>
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Модель</TableHead>
-                  <TableHead>Тип</TableHead>
-                  <TableHead>Мощность</TableHead>
-                  <TableHead>Размер камеры</TableHead>
-                  <TableHead>Производ. насоса</TableHead>
-                  <TableHead>Вес</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {technicalSpecs.map((spec, idx) => (
-                  <TableRow key={idx}>
-                    <TableCell className="font-medium">{spec.model}</TableCell>
-                    <TableCell>{spec.type}</TableCell>
-                    <TableCell>{spec.power}</TableCell>
-                    <TableCell>{spec.chamber}</TableCell>
-                    <TableCell>{spec.pump}</TableCell>
-                    <TableCell>{spec.weight}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </div>
-      </section>
+
 
       <section id="faq" ref={faqAnim.ref as React.RefObject<HTMLElement>} className={`py-20 bg-white transition-all duration-1000 ${faqAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="container mx-auto px-4 max-w-4xl">
@@ -682,8 +552,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Icon name="Package" className="text-blue-400" size={28} />
-                <span className="text-xl font-bold">VacuumPack</span>
+                <img src="https://cdn.poehali.dev/projects/e84451af-a3eb-4cf9-b3aa-82334790c296/files/8f28d00e-bfe8-443f-9a54-f05c97c1f0fb.png" alt="VacPro" className="h-8" />
               </div>
               <p className="text-gray-400 text-sm mb-4">
                 Профессиональное оборудование для вакуумной упаковки
@@ -715,7 +584,7 @@ const Index = () => {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#testimonials" className="hover:text-white transition-colors">Отзывы</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Услуги</a></li>
+
                 <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
@@ -725,14 +594,14 @@ const Index = () => {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Сервис</a></li>
+
                 <li><a href="#" className="hover:text-white transition-colors">Контакты</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 VacuumPack. Все права защищены.</p>
+            <p>© 2024 VacPro. Все права защищены.</p>
           </div>
         </div>
       </footer>
